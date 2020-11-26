@@ -3,19 +3,44 @@
     <div id="loginbox">
       <!-- 头像区域 -->
       <div class="avatar_box">
-        <img src="../assets/logo.png" alt="">
+        <img
+          src="../assets/logo.png"
+          alt=""
+        >
       </div>
       <!-- 登录表单区域 -->
-      <el-form ref="loginref" :rules="loginrules" :model="loginform" class="login_form" >
+      <el-form
+        ref="loginref"
+        :rules="loginrules"
+        :model="loginform"
+        class="login_form"
+      >
         <el-form-item prop="usename">
-          <el-input v-model="loginform.usename" prefix-icon="el-icon-s-custom" ></el-input>
+          <el-input
+            v-model="loginform.usename"
+            prefix-icon="el-icon-s-custom"
+          />
         </el-form-item>
         <el-form-item prop="password">
-          <el-input v-model="loginform.password" prefix-icon="el-icon-lock" show-password></el-input>
+          <el-input
+            v-model="loginform.password"
+            prefix-icon="el-icon-lock"
+            show-password
+          />
         </el-form-item>
         <el-form-item class="btns">
-          <el-button type="primary" @click="login">登录</el-button>
-          <el-button type="info" @click="resetform">重置</el-button>
+          <el-button
+            type="primary"
+            @click="login"
+          >
+            登录
+          </el-button>
+          <el-button
+            type="info"
+            @click="resetform"
+          >
+            重置
+          </el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -24,11 +49,11 @@
 
 <script>
 export default {
-  data(){
+  data () {
     return {
       loginform: {
-        usename: '',
-        password: ''
+        usename: 'admin',
+        password: '123456'
       },
       loginrules: {
         usename: [
@@ -42,15 +67,15 @@ export default {
       }
     }
   },
-  methods:{
-    resetform() {
-      this.$refs.loginref.resetFields();
+  methods: {
+    resetform () {
+      this.$refs.loginref.resetFields()
     },
-    login() {
-      this.$refs.loginref.validate(vaild =>{
-        if(!vaild) return;
+    login () {
+      this.$refs.loginref.validate(vaild => {
+        if (!vaild) return
         // this.$http.get('').then(res =>{console.log(res);})
-        this.$Message.success('登录成功');
+        this.$Message.success('登录成功')
         this.$router.push('/home')
       })
     }

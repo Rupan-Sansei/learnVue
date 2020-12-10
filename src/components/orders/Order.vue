@@ -49,6 +49,7 @@ export default {
         page: 1,
       },
       total: 3,
+      input3:''
     };
   },
 };

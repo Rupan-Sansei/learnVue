@@ -24,12 +24,14 @@ export default new VueRouter({
       children: [
         { path: '/welcome', component: Welcome },
         { path: '/users', component: Users },
-        { path: '/rights', component: Rights},
+        { path: '/rights', component: Rights },
         { path: '/roles', component: Roles },
         { path: '/categories', component: Cate },
         { path: '/goods', component: Goods },
         { path: '/params', component: Params },
-        { path: '/order', component: Order}
+        { path: '/order', component: Order },
+        { path: '/pic', component: () => import('@/components/pic') }
+
       ]
     }
   ]

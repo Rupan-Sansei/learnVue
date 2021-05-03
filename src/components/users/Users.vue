@@ -170,7 +170,7 @@ export default {
       console.log(newpage);
     },
     async getlist() {
-      const a = await this.$http.get("http://localhost:3000/api/users/list");
+      // const a = await this.$http.get("http://localhost:3000/api/users/list");
       this.list = a.data.data.lists;
     },
   },
